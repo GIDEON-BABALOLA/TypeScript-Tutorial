@@ -30,5 +30,46 @@ const getMoreSearchProducts = <T>(products: T[]): T => {
     const myIndex = 4
     return products[myIndex]
 }
+function anotherFunction<T, U extends number>(valOne: T, valTwo: U): object{
+return {
+    valOne,
+    valTwo
+}
+}
+function nextFunction<T, U extends number>(valOne: T, valTwo: U): object{
+    return {
+        valOne,
+        valTwo
+    }
+}
+interface Database{
+    connection: string,
+    username: string,
+    password: string
+}
+function databaseFunction<T, U extends Database>(valOne: T, valTwo: U): object{
+    return {
+        valOne,
+        valTwo
+    }
+}
+interface Quiz{
+    name: string,
+    type: string
+}
+interface Course{
+    name: string,
+    author: string,
+    subject: string
+}
+//Generic Class
+class Sellable<T>{
+    public cart: T[] = []
+    addToCart(product: T){
+        this.cart.push(product)
+    }
+}
+// anotherFunction(3, "4"), this code won't work becauce there is extend number
+nextFunction(2, 4)
 identityFour<Bottle>({brand : "new balance", type : 1.0})
 identityThree("dave")
